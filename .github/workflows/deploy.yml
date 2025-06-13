@@ -29,12 +29,16 @@ jobs:
           node-version: lts/*
 
       - name: Install step
-        run: "npm install"
-        working-directory: preview
+        run: |
+          cd preview
+          npm install
+        working-directory: ./preview
 
       - name: Build step
-        run: "npm run build"
-        working-directory: preview
+        run: |
+          cd preview
+          npm run build
+        working-directory: ./preview
 
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
@@ -42,5 +46,3 @@ jobs:
           project: "pretty-squircle"
           entrypoint: "https://deno.land/std@0.217.0/http/file_server.ts"
           root: "preview/dist"
-          
-          
