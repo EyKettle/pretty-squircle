@@ -29,14 +29,12 @@ jobs:
           node-version: lts/*
 
       - name: Install step
-        run: |
-          cd preview
-          npm install
+        run: npm install
+        working-directory: preview
 
       - name: Build step
-        run: |
-          cd preview
-          npm run build
+        run: npm run build
+        working-directory: preview
 
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1

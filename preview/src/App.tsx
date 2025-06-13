@@ -9,9 +9,6 @@ import {
   DynamicSquircle,
   getSquirclePath as squirclePath,
 } from "./debug_squircle";
-import { getSquirclePath as spth } from "./normal_version";
-import { getSquirclePath } from "pretty-squircle";
-import { getSquirclePath as getSquirclePathMini } from "pretty-squircle/mini";
 import { DOMElement } from "solid-js/jsx-runtime";
 
 const App: Component = () => {

@@ -19,7 +19,6 @@
   },
   "dependencies": {
     "autoprefixer": "^10.4.21",
-    "pretty-squircle": "file:..",
     "solid-js": "^1.9.7"
   }
 }
