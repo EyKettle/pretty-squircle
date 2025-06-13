@@ -1,0 +1,42 @@
+{
+  "name": "pretty-squircle",
+  "description": "real squircle everywhere",
+  "type": "module",
+  "author": "EyKettle",
+  "version": "1.0.0",
+  "license": "MIT",
+  "source": "src/index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./mini": {
+      "types": "./dist/mini/index.d.ts",
+      "import": "./dist/mini/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.ts src/mini/index.ts --format esm --dts --minify",
+    "prepare": "npm run build"
+  },
+  "devDependencies": {
+    "tsup": "^8.3.0",
+    "typescript": "^5.5.4"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "keywords": [
+    "squircle",
+    "figma",
+    "svg"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/phamfoo/figma-squircle.git"
+  }
+}

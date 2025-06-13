@@ -1,0 +1,25 @@
+{
+  "name": "squircle-preview",
+  "private": "true",
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^24.0.1",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5",
+    "vite-plugin-solid": "^2.11.6",
+    "vite-plugin-svg-icons-ng": "^1.4.1"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.21",
+    "pretty-squircle": "file:..",
+    "solid-js": "^1.9.7"
+  }
+}

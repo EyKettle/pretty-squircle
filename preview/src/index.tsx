@@ -1,0 +1,1 @@
+import{render}from"solid-js/web";import'virtual:svg-icons/register';import App from"./App";render(()=><App/>,document.getElementById("root")!);
