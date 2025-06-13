@@ -29,10 +29,10 @@ jobs:
           node-version: lts/*
 
       - name: Install step
-        run: "cd preview;npm install;npm install -d tsup"
+        run: "cd preview;npm install"
 
       - name: Build step
-        run: "npm run build"
+        run: "cd preview;npm run build"
 
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
