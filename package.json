@@ -3,7 +3,7 @@
   "description": "real squircle everywhere",
   "type": "module",
   "author": "EyKettle",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "source": "src/index.ts",
   "main": "dist/index.js",
@@ -39,6 +39,6 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/phamfoo/figma-squircle.git"
+    "url": "https://github.com/eykettle/pretty-squircle.git"
   }
 }
