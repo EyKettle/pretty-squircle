@@ -28,24 +28,15 @@ jobs:
         with:
           node-version: lts/*
 
-      - name: Debug - List repository contents
-        run: |
-          echo "Listing contents of the repository root:"
-          ls -lR .  # 递归列出当前目录（仓库根目录）的所有内容
-          echo "Current working directory: $(pwd)" # 再次确认当前目录
-          echo "--- End of directory listing ---"
-
       - name: Install step
         run: |
           cd preview
           npm install
-        working-directory: ./preview
 
       - name: Build step
         run: |
           cd preview
           npm run build
-        working-directory: ./preview
 
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
