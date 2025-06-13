@@ -3,6 +3,7 @@
 [![Stable Release](https://img.shields.io/npm/v/pretty-squircle)](https://npm.im/pretty-squircle) [![license](https://badgen.now.sh/badge/license/MIT)](./LICENSE)
 
 Figma squircle but pretty prefect.
+There's a [website](https://squircle.eykettle.top) to get a preview.
 
 This project is refactor from `figma-squircle`.
 See [this](https://github.com/phamfoo/figma-squircle) to learn what's it.
