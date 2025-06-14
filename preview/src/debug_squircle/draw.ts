@@ -149,11 +149,11 @@ export function getPathFromPathArgs({
     horizontal: boolean,
     arg: CornerPathArgs
   ) {
-    // `- LengthB / 3` For a closer shape to semicircle
+    // `- LengthB / 1.9` is a very closer shape to semicircle
     const deltaLen =
       (horizontal
-        ? arg.horizontalLengthA - arg.horizontalLengthB / 2
-        : arg.verticalLengthA - arg.verticalLengthB / 2) *
+        ? arg.horizontalLengthA - arg.horizontalLengthB / 1.9
+        : arg.verticalLengthA - arg.verticalLengthB / 1.9) *
       Math.pow(1 - delta, 3);
 
     horizontal

@@ -1,3 +1,5 @@
+const SQRT2 = Math.sqrt(2);
+
 export type CornerRadiusParam =
   | number
   | {
@@ -50,13 +52,13 @@ export function getPathArgsForCorner({
   horizontalTransitionLength,
 }: CornerParams): CornerPathArgs {
   const arcMovementLength =
-    Math.sin(toRadians(halfStandardArcAngle)) * radius * Math.sqrt(2);
+    Math.sin(toRadians(halfStandardArcAngle)) * radius * SQRT2;
 
-  const verticalLengthB =
-    (verticalTransitionLength - arcMovementLength - lengthC - lengthD) / 3;
+  const baseLengthCalcVal = arcMovementLength + lengthC + lengthD;
+  const verticalLengthB = (verticalTransitionLength - baseLengthCalcVal) / 3;
   const verticalLengthA = 2 * verticalLengthB;
   const horizontalLengthB =
-    (horizontalTransitionLength - arcMovementLength - lengthC - lengthD) / 3;
+    (horizontalTransitionLength - baseLengthCalcVal) / 3;
   const horizontalLengthA = 2 * horizontalLengthB;
 
   return {
@@ -81,25 +83,22 @@ export function getPathFromPathArgs({
   verticalMerged: verticalSemicircle,
   horizontalMerged: horizontalSemicircle,
 }: SVGPathInput) {
-  let horizontalPathArgs = { ...cornerPathArgs };
   function adjustTransition(
     delta: number,
     horizontal: boolean,
-    {
-      horizontalLengthA,
-      horizontalLengthB,
-      verticalLengthA,
-      verticalLengthB,
-    }: CornerPathArgs
+    args: CornerPathArgs
   ) {
-    // `- LengthB / 3` For a closer shape to semicircle
+    // `- LengthB / 1.9` is a very closer shape to semicircle
     const deltaLen =
       (horizontal
-        ? horizontalLengthA - horizontalLengthB / 3
-        : verticalLengthA - verticalLengthB / 3) * Math.pow(1 - delta, 3);
+        ? args.horizontalLengthA - args.horizontalLengthB / 1.9
+        : args.verticalLengthA - args.verticalLengthB / 1.9) *
+      Math.pow(1 - delta, 3);
     horizontal
-      ? ((horizontalLengthA -= deltaLen), (horizontalLengthB += deltaLen))
-      : ((verticalLengthA -= deltaLen), (verticalLengthB += deltaLen));
+      ? ((args.horizontalLengthA -= deltaLen),
+        (args.horizontalLengthB += deltaLen))
+      : ((args.verticalLengthA -= deltaLen),
+        (args.verticalLengthB += deltaLen));
   }
   if (verticalTransitionLength >= height / 2) {
     const delta =
@@ -109,7 +108,7 @@ export function getPathFromPathArgs({
   if (horizontalTransitionLength >= width / 2) {
     const delta =
       (horizontalTransitionLength - radius) / (maxTransitionLength - radius);
-    adjustTransition(delta, true, horizontalPathArgs);
+    adjustTransition(delta, true, cornerPathArgs);
   }
   return rounded`
     M ${

@@ -3,7 +3,7 @@
   "description": "real squircle everywhere",
   "type": "module",
   "author": "EyKettle",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "license": "MIT",
   "source": "src/index.ts",
   "main": "dist/index.js",

@@ -5,10 +5,7 @@ import {
   Show,
   type Component,
 } from "solid-js";
-import {
-  DynamicSquircle,
-  getSquirclePath as squirclePath,
-} from "./debug_squircle";
+import { DynamicSquircle, getSquirclePath } from "./debug_squircle";
 import { DOMElement } from "solid-js/jsx-runtime";
 
 const App: Component = () => {
@@ -42,7 +39,7 @@ const App: Component = () => {
   const [path, setPath] = createSignal(dynamicSquircle.manualDraw());
   createEffect(() => {
     // setPath(
-    //   squirclePath({
+    //   getSquirclePath({
     //     cornerRadius: {
     //       topLeft: topLeft(),
     //       topRight: topRight(),
@@ -378,7 +375,7 @@ const App: Component = () => {
                     //   },
                     //   Math.random()
                     // );
-                    squirclePath({
+                    getSquirclePath({
                       cornerRadius: {
                         topLeft: Math.random() * 2000,
                         topRight: Math.random() * 2000,
