@@ -36,7 +36,7 @@ const svgPath = getSquirclePath({
   cornerSmoothing: 0.8,
 });
 
-// the result is a svg path you can use it to create svg element
+// The result is a svg path you can use it to create svg element
 function PinkSquircle() {
   return (
     <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
@@ -59,6 +59,21 @@ function ProfilePicture() {
     </div>
   );
 }
+```
+
+## Mini Version
+
+There's also a mini version for uniform corner squircle.
+
+```jsx
+import { getSquirclePath } from "pretty-squircle/mini";
+
+const svgPath = getSquirclePath({
+  width: 200,
+  height: 200,
+  cornerRadius: 24, // Only support `number`
+  cornerSmoothing: 0.8,
+});
 ```
 
 ## Attention
