@@ -16,11 +16,11 @@ const App: Component = () => {
   let draggingBase = 0;
   let draggingSetter: Setter<number> | undefined;
 
-  const [height, setHeight] = createSignal(200);
+  const [height, setHeight] = createSignal(339);
   const [width, setWidth] = createSignal(400);
   const [smoothing, setSmoothing] = createSignal(0.8);
   const [topLeft, setTopLeft] = createSignal(100);
-  const [topRight, setTopRight] = createSignal(100);
+  const [topRight, setTopRight] = createSignal(835);
   const [bottomRight, setBottomRight] = createSignal(100);
   const [bottomLeft, setBottomLeft] = createSignal(100);
   const dynamicSquircle = new DynamicSquircle(
@@ -38,31 +38,31 @@ const App: Component = () => {
   );
   const [path, setPath] = createSignal(dynamicSquircle.manualDraw());
   createEffect(() => {
-    // setPath(
-    //   getSquirclePath({
-    //     cornerRadius: {
-    //       topLeft: topLeft(),
-    //       topRight: topRight(),
-    //       bottomLeft: bottomLeft(),
-    //       bottomRight: bottomRight(),
-    //     },
-    //     cornerSmoothing: smoothing(),
-    //     width: width(),
-    //     height: height(),
-    //   })
-    // );
-    const updated = dynamicSquircle.update(
-      height(),
-      width(),
-      {
-        topLeft: topLeft(),
-        topRight: topRight(),
-        bottomLeft: bottomLeft(),
-        bottomRight: bottomRight(),
-      },
-      smoothing()
+    setPath(
+      getSquirclePath({
+        cornerRadius: {
+          topLeft: topLeft(),
+          topRight: topRight(),
+          bottomLeft: bottomLeft(),
+          bottomRight: bottomRight(),
+        },
+        cornerSmoothing: smoothing(),
+        width: width(),
+        height: height(),
+      })
     );
-    if (updated) setPath(updated);
+    // const updated = dynamicSquircle.update(
+    //   height(),
+    //   width(),
+    //   {
+    //     topLeft: topLeft(),
+    //     topRight: topRight(),
+    //     bottomLeft: bottomLeft(),
+    //     bottomRight: bottomRight(),
+    //   },
+    //   smoothing()
+    // );
+    // if (updated) setPath(updated);
   });
 
   const inputLimit = (
@@ -139,14 +139,14 @@ const App: Component = () => {
               "clip-path": `path("${path()}")`,
             }}
           >
-            <div
+            {/* <div
               style={{
                 position: "absolute",
                 height: "100%",
                 width: "100%",
                 "background-color": "white",
               }}
-            />
+            /> */}
             <div
               style={{
                 position: "absolute",
