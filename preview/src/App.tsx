@@ -6,6 +6,7 @@ import {
   type Component,
 } from "solid-js";
 import { DynamicSquircle, getSquirclePath } from "./debug_squircle";
+// import { getSquirclePath } from "./mini";
 import { DOMElement } from "solid-js/jsx-runtime";
 
 const App: Component = () => {
@@ -46,6 +47,7 @@ const App: Component = () => {
           bottomLeft: bottomLeft(),
           bottomRight: bottomRight(),
         },
+        // cornerRadius: topLeft(),
         cornerSmoothing: smoothing(),
         width: width(),
         height: height(),
@@ -382,6 +384,7 @@ const App: Component = () => {
                         bottomRight: Math.random() * 2000,
                         bottomLeft: Math.random() * 2000,
                       },
+                      // cornerRadius: Math.random() * 2000,
                       cornerSmoothing: Math.random(),
                       height: Math.random() * 2000,
                       width: Math.random() * 2000,
