@@ -1,6 +1,6 @@
 # Pretty Squircle
 
-[![Stable Release](https://img.shields.io/npm/v/pretty-squircle)](https://npm.im/pretty-squircle) [![license](https://badgen.now.sh/badge/license/MIT)](./LICENSE)
+[![Stable Release](https://img.shields.io/npm/v/pretty-squircle)](https://npm.im/pretty-squircle) [![license](https://badgen.now.sh/badge/license/MIT)](./LICENSE) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org)
 
 Figma squircle but pretty prefect.
 There's a [website](https://squircle.eykettle.top) to get a preview.
