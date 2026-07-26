@@ -424,7 +424,7 @@ const App: Component = () => {
           style={{
             position: "absolute",
             inset: 0,
-            cursor: "w-resize",
+            cursor: "ew-resize",
           }}
         />
       </Show>

@@ -190,7 +190,7 @@ input[type="range"]:focus {
   width: 25px;
   padding: 3px;
   border-radius: 4px;
-  cursor: w-resize;
+  cursor: ew-resize;
   transition: var(--transition-long);
   fill: var(--color-text-secondary);
 }
